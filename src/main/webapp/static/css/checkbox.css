@@ -1,0 +1,138 @@
+/* Hiding the checkbox, but allowing it to be focused */
+.badgebox
+{
+    opacity: 0;
+}
+
+.badgebox + .badge
+{
+    /* Move the check mark away when unchecked */
+    text-indent: -999999px;
+    /* Makes the badge's width stay the same checked and unchecked */
+    width: 27px;
+}
+
+.badgebox:focus + .badge
+{
+    /* Set something to make the badge looks focused */
+    /* This really depends on the application, in my case it was: */
+    
+    /* Adding a light border */
+    box-shadow: inset 0px 0px 5px;
+    /* Taking the difference out of the padding */
+}
+
+.badgebox:checked + .badge
+{
+    /* Move the check mark back when checked */
+	text-indent: 0;
+}
+
+.btn-purple {
+	color: #fff;
+	background-color: #9933ff;
+	border-color: #892de5
+}
+
+.btn-purple.focus, .btn-purple:focus {
+	color: #fff;
+	background-color: #7a28cc;
+	border-color: #892de5
+}
+
+.btn-purple:hover {
+	color: #fff;
+	background-color: #7a28cc;
+	border-color: #892de5
+}
+
+.btn-purple.active, .btn-purple:active, .open>.dropdown-toggle.btn-purple
+	{
+	color: #fff;
+	background-color: #7a28cc;
+	border-color: #892de5
+}
+
+.btn-purple.active.focus, .btn-purple.active:focus, .btn-purple.active:hover,
+	.btn-purple:active.focus, .btn-purple:active:focus, .btn-purple:active:hover,
+	.open>.dropdown-toggle.btn-purple.focus, .open>.dropdown-toggle.btn-purple:focus,
+	.open>.dropdown-toggle.btn-purple:hover {
+	color: #fff;
+	background-color: #7a28cc;
+	border-color: #892de5
+}
+
+.btn-purple.active, .btn-purple:active, .open>.dropdown-toggle.btn-purple
+	{
+	background-image: none
+}
+
+.btn-purple.disabled.focus, .btn-purple.disabled:focus, .btn-purple.disabled:hover,
+	.btn-purple[disabled].focus, .btn-purple[disabled]:focus,
+	.btn-purple[disabled]:hover, fieldset[disabled] .btn-purple.focus,
+	fieldset[disabled] .btn-purple:focus, fieldset[disabled] .btn-purple:hover
+	{
+	background-color: #b770ff;
+	border-color: #c184ff
+}
+
+.btn-purple .badge {
+	color: #b770ff;
+	background-color: #fff
+}
+
+
+.btn-pink {
+	color: #fff;
+	background-color: #cf00cf;
+	border-color: #b800b8
+}
+
+.btn-pink.focus, .btn-pink:focus {
+	color: #fff;
+	background-color: #b800b8;
+	border-color:#a100a1
+}
+
+.btn-pink:hover {
+	color: #fff;
+	background-color: #b800b8;
+	border-color:#a100a1
+}
+
+.btn-pink.active, .btn-pink:active, .open>.dropdown-toggle.btn-pink
+	{
+	color: #fff;
+	background-color: #b800b8;
+	border-color:#a100a1
+}
+
+.btn-pink.active.focus, .btn-pink.active:focus, .btn-pink.active:hover,
+	.btn-pink:active.focus, .btn-pink:active:focus, .btn-pink:active:hover,
+	.open>.dropdown-toggle.btn-pink.focus, .open>.dropdown-toggle.btn-pink:focus,
+	.open>.dropdown-toggle.btn-pink:hover {
+	color: #fff;
+	background-color: #b800b8;
+	border-color:#a100a1
+}
+
+.btn-pink.active, .btn-pink:active, .open>.dropdown-toggle.btn-pink
+	{
+	background-image: none
+}
+
+.btn-pink.disabled.focus, .btn-pink.disabled:focus, .btn-pink.disabled:hover,
+	.btn-pink[disabled].focus, .btn-pink[disabled]:focus,
+	.btn-pink[disabled]:hover, fieldset[disabled] .btn-pink.focus,
+	fieldset[disabled] .btn-pink:focus, fieldset[disabled] .btn-pink:hover
+	{
+	background-color: #f066f0;
+	border-color:#ed4ced
+}
+
+.btn-pink .badge {
+	color: #ed4ced;
+	background-color: #fff
+}
+
+
