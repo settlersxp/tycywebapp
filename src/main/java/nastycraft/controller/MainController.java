@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.web.servlet.view.RedirectView;
 import nastycraft.model.Forum;
 import nastycraft.model.Newsletter;
 import nastycraft.model.Voting;
@@ -81,53 +80,34 @@ public class MainController {
         return "/nastycraft";
     }
     
-    @GetMapping("/test")
+    @GetMapping("/nasticraftcmslogin")
     public String home(HttpServletRequest request) {
         request.setAttribute("mode", "HOME");
         return "index";
     }
      
     @PostMapping("/login-user")
-    public String loginUser(@RequestParam String name,@RequestParam String password,HttpServletRequest request,HttpSession session) {
+    public String loginUser(@RequestParam String name,@RequestParam String password,HttpServletRequest request,HttpSession session,RedirectAttributes attributes) {
          
         if(userService.checkPassAndUser(name, password)){
             session.setAttribute("loggedIn", true);
             request.setAttribute("mode", "ADMINCP");
+            return "redirect:" + "/admincp";
         }else{
-            request.setAttribute("wrong_password", true);
+        	attributes.addFlashAttribute("wrong_password", true);
             request.setAttribute("mode", "HOME");
+            return "redirect:" + "/nasticraftcmslogin";
         }
-         
-        return "index";
     }
-     
-     
-     
-    @GetMapping("/redirectLogIn")
-    public RedirectView redirectLogIn(RedirectAttributes attributes,HttpServletRequest request) {
-        attributes.addFlashAttribute("flashAttribute", "redirectWithRedirectView");
-        return new RedirectView("/test");
-    }
-//    @GetMapping("/redirectNewsletter")
-//    public RedirectView redirectNewsletter(RedirectAttributes attributes,HttpServletRequest request) {
-//        attributes.addFlashAttribute("flashAttribute", "redirectWithRedirectView");
-//        return new RedirectView("/");
-//    }
-     
      
     @GetMapping("/logOut")
     public String logOut(RedirectAttributes attributes,HttpServletRequest request, HttpSession session) {
         session.removeAttribute("loggedIn");
-        request.setAttribute("log_out", true);
+        attributes.addFlashAttribute("log_out", true);
         request.setAttribute("mode", "HOME");
-        return "index";
+        return "redirect:" + "/nasticraftcmslogin";
     }
-     
-    @GetMapping("/category")
-    public String category(HttpServletRequest request,HttpSession session) {
-        request.setAttribute("mode", "CATEGORY");
-        return "index";
-    }
+
     @GetMapping("/admincp")
     public String admincp(HttpServletRequest request,HttpSession session) {
         request.setAttribute("mode", "ADMINCP");

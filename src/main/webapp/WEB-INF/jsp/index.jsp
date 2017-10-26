@@ -613,7 +613,7 @@
 							<!-- /form -->
 							<p id="profile-name" class="profile-name-card">
 								&copy; <a href="http://nasticraft.ro" class="forgot-password">nasticraft.ro
-								</a> | <a href="" class="forgot-password">Created By TyCy </a>
+								</a> | <a href="" class="forgot-password">Powered by TyCy </a>
 							</p>
 
 							<c:choose>
@@ -657,7 +657,7 @@
 							</div>
 
 							<div class="text-center">
-								<a href="/redirectLogIn"><button type="button"
+								<a href="/nasticraftcmslogin"><button type="button"
 										class="btn btn-warning">Click Here To Log In</button></a>
 							</div>
 
